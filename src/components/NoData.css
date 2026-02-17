@@ -1,0 +1,24 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #28334e, #1e293b);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.Nodata-contaner{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 70vh;
+}
+
+.Nodata-contaner h1{
+  font-size: 5.6rem;
+  font-weight: 800;
+  margin: 10px 0;
+  background: linear-gradient(90deg, #e0e7ff, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
