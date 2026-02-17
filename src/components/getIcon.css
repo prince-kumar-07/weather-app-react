@@ -1,0 +1,14 @@
+.icon-01d svg {
+  display: block;
+  animation: rotate360 5s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

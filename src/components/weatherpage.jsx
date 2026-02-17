@@ -2,11 +2,12 @@ import "./weatherpage.css";
 import { AppContext } from "../context/AppContext";
 import { useContext, useEffect } from "react";
 import NoData from "./NoData";
+import GetIcon from "./getIcon";
 
 
 function Weatherpage() {
 
-  const { apiData, countryFlag, weatherIcon } = useContext(AppContext);
+  const { apiData, countryFlag } = useContext(AppContext);
 
   const NA = "No data available";
 
@@ -56,9 +57,7 @@ function Weatherpage() {
       </div>
 
       <div className="icon">
-        {weatherIcon && (
-          <img src={weatherIcon} alt="weather icon" />
-        )}
+        <GetIcon iconKey={apiData?.weather[0]?.icon} />
       </div>
 
       <div className="temp">

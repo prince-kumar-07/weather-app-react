@@ -66,10 +66,11 @@ body {
 }
 
 /* Icon */
-.icon img {
+.icon  {
   width: 90px;
   margin: 18px auto;
   filter: drop-shadow(0 12px 25px rgba(255,255,255,0.35));
+  /* border: 0px solid black; */
 }
 
 /* Temperature */
