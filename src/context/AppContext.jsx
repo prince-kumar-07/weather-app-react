@@ -11,7 +11,6 @@ function AppContextProvider({ children }) {
   const [country, setCountry] = useState();
   const [countryFlag, setCountryFlag] = useState();
   const [loading, setLoading] = useState(false);
-  // const [weatherIcon, setWeatherIcon] = useState();
 
   async function fetchDataByCity(cityName) {
     setLoading(true);
@@ -27,19 +26,12 @@ function AppContextProvider({ children }) {
       );
       const data = await fetchData.json();
 
-      //  console.log(data)
       if(data.name){
       setApiData(data);
      
-      
-      setCountryFlag(
-        `https://flagsapi.com/BE/shiny/64.png`.replace("BE", data.sys.country),
-      );
-//      setWeatherIcon(
-//   `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`
-// );
-   
+      setCountryFlag(`https://flagsapi.com/BE/shiny/64.png`.replace("BE", data.sys.country),);
       setOpen(false);
+      setCity("")
     } else {
       
       toast.error(data.message)
@@ -47,10 +39,8 @@ function AppContextProvider({ children }) {
     } 
     catch (error) {
      toast.error("Something went wrong");
-     
     }
     setLoading(false);
-
   }
 
 
@@ -70,10 +60,6 @@ const fetchDataByLonLat = useCallback(async (lat, long) => {
     setCountryFlag(
       `https://flagsapi.com/${data.sys.country}/shiny/64.png`
     );
-
-    // setWeatherIcon(
-    //   `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
-    // );
 
   } catch (error) {
     toast.error(error.message);
@@ -152,7 +138,6 @@ const handleOnload = useCallback(async () => {
     countryFlag,
     loading,
     setLoading,
-    // weatherIcon,
     getLongLat,
     handleOnload
   };
