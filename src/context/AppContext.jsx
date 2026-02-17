@@ -27,7 +27,7 @@ function AppContextProvider({ children }) {
       );
       const data = await fetchData.json();
 
-       console.log(data)
+      //  console.log(data)
       if(data.name){
       setApiData(data);
      
